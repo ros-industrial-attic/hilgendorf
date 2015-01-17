@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"
+       name="hilgendorf" >
+
+  <xacro:include filename="$(find hilgendorf_support)/urdf/hilgendorf_macro.xacro" />
+
+  <xacro:hilgendorf prefix="" />
+
+</robot>

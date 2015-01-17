@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+
+<!-- 
+  URDF model of the stand used to mount two UR5 arms in the Higlendorf package.
+  The joint-interface to this model is:
+    Base: "[prefix]base_link" - at bottom of vertical post
+    Right Arm: "[prefix]right_shoulder"
+    Left Arm: "[prefix]left_shoulder"
+ -->
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Physical dimensions of the base -->
+  <property name="base_shoulder_height" value="0.54" />
+  <property name="base_shoulder_width" value="0.665" /> 
+  <property name="base_shoulder_angle" value="2.356194490192345" />
+
+  <!-- Base macro -->
+  <xacro:macro name="hilgendorf_base" params="prefix">
+    
+    <!-- The physical stand to which the arms are connected -->
+    <link name="${prefix}base_link" >
+       <visual>
+        <geometry>
+           <mesh filename="package://hilgendorf_support/meshes/hilgendorf/visual/base_link.STL" />
+        </geometry>
+        <material name="grey">
+          <color rgba="0.3 0.3 0.3 1"/>
+        </material>
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://hilgendorf_support/meshes/hilgendorf/collision/base_link.STL" />
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- The external joint-interface of this model -->
+    <link name="${prefix}right_shoulder" />
+    <link name="${prefix}left_shoulder" />
+
+    <joint name="${prefix}hpost_to_right_shoulder" type="fixed">
+      <parent link="${prefix}base_link" />
+      <child link="${prefix}right_shoulder" />
+      <origin xyz="0 ${-base_shoulder_width/2} ${base_shoulder_height}" rpy="${base_shoulder_angle} 0 0"/>
+    </joint>
+
+    <joint name="${prefix}hpost_to_left_shoulder" type="fixed">
+      <parent link="${prefix}base_link" />
+      <child link="${prefix}left_shoulder" />
+      <origin xyz="0 ${base_shoulder_width/2} ${base_shoulder_height}" rpy="${-base_shoulder_angle} 0 0"/>
+    </joint>
+
+  </xacro:macro>
+</robot>
