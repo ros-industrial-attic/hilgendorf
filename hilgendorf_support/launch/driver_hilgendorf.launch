@@ -1,13 +1,6 @@
 <?xml version="1.0"?>
 <!--
-  Slightly modified Universal robot common bringup.  Starts ur driver node and robot state
-  publisher (translates joint positions to propper tfs). Adds extra argument for prefix.
-  
-  NOTE: This launch file also starts a tf2 node, which is not typically
-  used
-
-  Usage:
-    ur_common.launch robot_ip:=<value>
+  Slightly modified Universal robot common bringup. Adds extra argument for prefix.
 -->
 <launch>
   <!-- robot_ip: IP-address of the robot's socket-messaging server -->
