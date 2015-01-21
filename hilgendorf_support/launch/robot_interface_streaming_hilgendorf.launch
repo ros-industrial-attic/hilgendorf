@@ -14,7 +14,7 @@
   <arg name="fake_robotiqs" default="true">
   
   <!-- launch drivers for right arm -->
-  <include file="$(find hilgendorf_support)/launch/driver_higlendorf.launch">
+  <include file="$(find hilgendorf_support)/launch/driver_hilgendorf.launch">
     <arg name="robot_ip" value="$(arg right_robot_ip)"/>
     <arg name="reverse_port" value="$(arg right_reverse_port)"/>
     <arg name="min_payload"  value="$(arg min_payload)"/>
@@ -22,7 +22,7 @@
     <arg name="prefix" value="right_"/>
   </include>
 
-  <include file="$(find hilgendorf_support)/launch/driver_higlendorf.launch">
+  <include file="$(find hilgendorf_support)/launch/driver_hilgendorf.launch">
     <arg name="robot_ip" value="$(arg left_robot_ip)"/>
     <arg name="reverse_port" value="$(arg left_reverse_port)"/>
     <arg name="min_payload"  value="$(arg min_payload)"/>
