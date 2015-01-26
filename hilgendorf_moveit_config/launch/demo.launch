@@ -7,7 +7,7 @@
   <arg name="debug" default="false" />
 
   <!-- Allow user to specify database location -->
-  <arg name="db_path" default="$(find fanuc_lrmate200ic5h_moveit_config)/default_warehouse_mongo_db" />
+  <arg name="db_path" default="$(find hilgendorf_moveit_config)/default_warehouse_mongo_db" />
 
 
   <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
