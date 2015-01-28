@@ -11,7 +11,6 @@
   <arg name="left_reverse_port" default="50002"/>
   <arg name="min_payload"  default="0.0"/>
   <arg name="max_payload"  default="10.0"/>
-  <arg name="fake_robotiqs" default="true">
   
   <!-- launch drivers for right arm -->
   <include file="$(find hilgendorf_support)/launch/driver_hilgendorf.launch">
@@ -32,16 +31,10 @@
 
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
-   <!-- TF Buffer Server -->
-  <node pkg="tf2_ros" type="buffer_server" name="tf2_buffer_server">
-    <param name="buffer_size" value="120.0"/>
-  </node>
+  <!-- TODO: Add launch files for the Robotiq grippers (if any) -->
 
-  <!-- If robotiq position data is not being published, ignore them-->
-    <!-- robot model -->
-  <include if="$(arg fake_robotiqs)" file="$(find hilgendorf_support)/launch/load_hilgendorf.launch" />
-  <node if="$(arg fake_robotiqs)" name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
-    <param name="source_list" value="[join_states]">
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
+    <rosparam param="source_list">["left_joint_states", "right_joint_states"]</rosparam> 
   </node>
   
 </launch>
