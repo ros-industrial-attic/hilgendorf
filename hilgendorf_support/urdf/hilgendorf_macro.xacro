@@ -12,7 +12,7 @@
   <xacro:include filename="$(find robotiq_c_model_visualization)/urdf/robotiq_c_model_macro.xacro" />
 
   <!-- Physical dimensions -->
-  <property name="ur5_mount_angle_offset" value="0.7853981633974483" />
+  <property name="ur5_mount_angle_offset" value="-0.7853981633974483" />
   <property name="robotiq_grip_target_offset" value="0.1" />
 
   <xacro:macro name="hilgendorf" params="prefix">
@@ -32,13 +32,13 @@
     <joint name="${prefix}right_shoulder_to_right_arm" type="fixed">
       <parent link="${prefix}right_shoulder" />
       <child link="${prefix}right_base_link" />
-      <origin xyz="0.0 0.0 0" rpy="0.0 0.0 0" />
+      <origin xyz="0.0 0.0 0" rpy="0.0 0.0 ${ur5_mount_angle_offset}" />
     </joint>
 
     <joint name="${prefix}left_shoulder_to_left_arm" type="fixed">
       <parent link="${prefix}left_shoulder" />
       <child link="${prefix}left_base_link" />
-      <origin xyz="0.0 0.0 0" rpy="0.0 0.0 0" />
+      <origin xyz="0.0 0.0 0" rpy="0.0 0.0 ${ur5_mount_angle_offset}" />
     </joint>
 
     <!-- Connect gripers to arms -->
