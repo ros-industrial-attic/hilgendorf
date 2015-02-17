@@ -1,0 +1,28 @@
+<package>
+
+  <name>hilgendorf_moveit_config</name>
+  <version>0.1.0</version>
+  <description>
+     An automatically generated package with all the configuration and launch files for using the hilgendorf with the MoveIt Motion Planning Framework
+  </description>
+  
+  <author>Jonathan Meyer</author>
+  <maintainer email="jonathan.meyer@swri.org">Jonathan Meyer</maintainer>
+
+  <url type="repository">https://github.com/ros-industrial-consortium/hilgendorf</url>
+
+  <license>BSD</license>
+
+  <run_depend>moveit_ros_move_group</run_depend>
+  <run_depend>moveit_planners_ompl</run_depend>
+  <run_depend>moveit_ros_visualization</run_depend>
+  <run_depend>joint_state_publisher</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>xacro</run_depend>
+  <build_depend>hilgendorf_support</build_depend>
+  <run_depend>hilgendorf_support</run_depend>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+  
+</package>
