@@ -23,5 +23,6 @@
   <run_depend>ur_description</run_depend>
   <run_depend>ur_driver</run_depend>
   <run_depend>xacro</run_depend>
+  <run_depend>robotiq_c2_model_visualization</run_depend>
 
 </package>

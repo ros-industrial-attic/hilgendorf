@@ -9,7 +9,7 @@
    <!-- ur5 -->
   <xacro:include filename="$(find ur_description)/urdf/ur5.urdf.xacro" />
   <!-- Robotiq c-model grippers -->
-  <xacro:include filename="$(find robotiq_c_model_visualization)/urdf/robotiq_c_model_macro.xacro" />
+  <xacro:include filename="$(find robotiq_c2_model_visualization)/urdf/robotiq_c2_model_macro.xacro" />
 
   <!-- Physical dimensions -->
   <property name="ur5_mount_angle_offset" value="-0.7853981633974483" />
@@ -25,8 +25,8 @@
     <xacro:ur5_robot prefix="${prefix}left_" joint_limited="true" />
     
     <!-- Grippers -->
-    <xacro:robotiq_c_model prefix="${prefix}right_" />
-    <xacro:robotiq_c_model prefix="${prefix}left_" />
+    <xacro:robotiq_c2_model prefix="${prefix}right_" />
+    <xacro:robotiq_c2_model prefix="${prefix}left_" />
 
     <!-- Connect arms to base -->
     <joint name="${prefix}right_shoulder_to_right_arm" type="fixed">
