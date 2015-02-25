@@ -13,7 +13,7 @@
   <include file="$(find hilgendorf_support)/launch/load_hilgendorf.launch" />
   
   <!-- launch drivers for right arm -->
-  <include file="$(find hilgendorf_support)/launch/driver_hilgendorf.launch">
+  <include file="$(find hilgendorf_support)/launch/driver_hilgendorf.launch" ns="right">
     <arg name="robot_ip" value="$(arg right_robot_ip)"/>
     <arg name="reverse_port" value="$(arg right_reverse_port)"/>
     <arg name="min_payload"  value="$(arg min_payload)"/>
@@ -21,7 +21,7 @@
     <arg name="prefix" value="right_"/>
   </include>
 
-  <include file="$(find hilgendorf_support)/launch/driver_hilgendorf.launch">
+  <include file="$(find hilgendorf_support)/launch/driver_hilgendorf.launch" ns="left">
     <arg name="robot_ip" value="$(arg left_robot_ip)"/>
     <arg name="reverse_port" value="$(arg left_reverse_port)"/>
     <arg name="min_payload"  value="$(arg min_payload)"/>
@@ -33,7 +33,7 @@
 
   <!-- If robotiq position data is not being published, ignore them-->
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
-	  <rosparam param="source_list">["left_joint_states", "right_joint_states"]</rosparam> 
+	  <rosparam param="source_list">["/left/left_joint_states", "/right/right_joint_states"]</rosparam> 
   </node>
 
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find industrial_robot_client)/config/robot_state_visualize.rviz" required="true" />
