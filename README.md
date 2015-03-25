@@ -8,4 +8,4 @@ ROS-Industrial Special Project: Dual arm (Universal + Robotiq) robot
 Those who are interested in contributing should first email the [ROS-Industrial developer group](mailto:swri-ros-pkg-
 dev@googlegroups.com)
 
-![alt tag](https://raw.github.com/madratman/hilgendorf/issue_#1_add_hilgendorf_config_to_readme/hilgendorf_images/hilgendorf.JPG)
+![alt tag](https://raw.github.com/madratman/hilgendorf/issue_%231_add_hilgendorf_config_to_readme/hilgendorf_images/hilgendorf.JPG)
