@@ -2,7 +2,7 @@
 
 <!-- URDF-XACRO file for generating a Hilgendorf dual-arm robot-->
 
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
 
   <!-- base -->
   <xacro:include filename="$(find hilgendorf_support)/urdf/hilgendorf_base_macro.xacro" />
@@ -12,8 +12,8 @@
   <xacro:include filename="$(find robotiq_c2_model_visualization)/urdf/robotiq_c2_model_macro.xacro" />
 
   <!-- Physical dimensions -->
-  <property name="ur5_mount_angle_offset" value="-0.7853981633974483" />
-  <property name="robotiq_grip_target_offset" value="0.1" />
+  <xacro:property name="ur5_mount_angle_offset" value="-0.7853981633974483" />
+  <xacro:property name="robotiq_grip_target_offset" value="0.1" />
 
   <xacro:macro name="hilgendorf" params="prefix">
 
